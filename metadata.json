@@ -1,0 +1,6 @@
+{
+  "name": "Developer Portfolio",
+  "description": "Responsive web and mobile app version portfolio website for a professional web developer with interactive project showcases, live code playground, terminal CLI, and responsive dual web/app modes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
