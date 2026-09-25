@@ -9,13 +9,6 @@ declare global {
   }
 }
 
-declare module 'react/jsx-runtime' {
-  export const Fragment: any;
-  export const jsx: any;
-  export const jsxs: any;
-  export const jsxDEV: any;
-}
-
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { TechStack } from './components/TechStack';
@@ -36,6 +29,7 @@ export default function App() {
   const [accentColor, setAccentColor] = useState<AccentColor>('indigo');
   const [terminalOpen, setTerminalOpen] = useState<boolean>(false);
   const [resumeOpen, setResumeOpen] = useState<boolean>(false);
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -98,10 +92,12 @@ export default function App() {
       />
 
       {/* Printable / Downloadable Resume Modal */}
-      <ResumeModal
-        isOpen={resumeOpen}
-        onClose={() => setResumeOpen(false)}
-      />
+      {false && (
+        <ResumeModal
+          isOpen={resumeOpen}
+          onClose={() => setResumeOpen(false)}
+        />
+      )}
 
     </div>
   );

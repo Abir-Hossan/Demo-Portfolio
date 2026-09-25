@@ -26,7 +26,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({
   isOpen,
   onClose,
   onOpenResume
-}) => {
+}: InteractiveTerminalProps) => {
   const [inputVal, setInputVal] = useState('');
   const [logs, setLogs] = useState<CommandLog[]>([
     {
@@ -232,7 +232,7 @@ export const InteractiveTerminal: React.FC<InteractiveTerminalProps> = ({
             ref={inputRef}
             type="text"
             value={inputVal}
-            onChange={(e) => setInputVal(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInputVal(e.target.value)}
             placeholder="Type 'help', 'skills', 'hire'..."
             className="flex-1 bg-transparent text-xs text-white focus:outline-none font-mono"
           />

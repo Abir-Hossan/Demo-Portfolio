@@ -1,17 +1,19 @@
+declare module 'react/jsx-runtime';
+
 import React from 'react';
 import confetti from 'canvas-confetti';
-import { 
-  X, 
-  Download, 
-  Printer, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Globe, 
-  Briefcase, 
-  GraduationCap, 
+import {
+  X,
+  Download,
+  Printer,
+  Mail,
+  Phone,
+  MapPin,
+  Globe,
+  Briefcase,
+  GraduationCap,
   CheckCircle2,
-  Award
+  Award,
 } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, RESUME_DATA } from '../data/portfolioData';
 
@@ -20,8 +22,10 @@ interface ResumeModalProps {
   onClose: () => void;
 }
 
-export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+export const ResumeModal = ({ 
+  isOpen, 
+  onClose 
+}: ResumeModalProps): React.ReactElement | null => {
 
   const handleDownload = () => {
     try {

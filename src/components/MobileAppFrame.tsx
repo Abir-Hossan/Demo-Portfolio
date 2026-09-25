@@ -31,7 +31,7 @@ export const MobileAppFrame: React.FC<MobileAppFrameProps> = ({
   onOpenResume
 }) => {
   const [activeTab, setActiveTab] = useState<'home' | 'skills' | 'projects' | 'contact'>('home');
-  const [haptics, setHaptics] = useState(true);
+  const [haptics, setHaptics] = useState(false);
   const [notification, setNotification] = useState<string | null>(
     '👋 Welcome to Kabir\'s Mobile App Portfolio!'
   );

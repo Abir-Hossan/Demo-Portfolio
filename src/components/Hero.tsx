@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  Terminal, 
-  Smartphone, 
-  Code2, 
-  CheckCircle2, 
-  Sparkles, 
-  GithubIcon, 
-  LinkedinIcon, 
-  Mail, 
+import React, { useState, useEffect } from "react";
+import {
+  ArrowRight,
+  Terminal,
+  Smartphone,
+  Code2,
+  CheckCircle2,
+  Sparkles,
+  GithubIcon,
+  LinkedinIcon,
+  Mail,
   FileText,
   Zap,
-  Play
-} from 'lucide-react';
-import { PERSONAL_INFO } from '../data/portfolioData';
-import { ViewMode } from '../types';
+  Play,
+} from "lucide-react";
+import { PERSONAL_INFO } from "../data/portfolioData";
+import { ViewMode } from "../types";
 
 interface HeroProps {
   onOpenTerminal: () => void;
@@ -25,19 +25,19 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({
   onOpenTerminal,
   onOpenResume,
-  setViewMode
+  setViewMode,
 }) => {
   const roles = [
-    'Senior Web Developer',
-    'React 19 & TypeScript Engineer',
-    'Full-Stack UI Architect',
-    'Responsive PWA Specialist'
+    "Senior Web Developer",
+    "React 19 & TypeScript Engineer",
+    "Full-Stack UI Architect",
+    "Responsive PWA Specialist",
   ];
 
   const [roleIndex, setRoleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview');
+  const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [btnClicked, setBtnClicked] = useState(0);
 
   useEffect(() => {
@@ -61,18 +61,18 @@ export const Hero: React.FC<HeroProps> = ({
   }, [displayText, isDeleting, roleIndex]);
 
   return (
-    <section id="about" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
-      
+    <section
+      id="about"
+      className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden"
+    >
       {/* Background Decorative Ambient Gradients */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-indigo-600/10 dark:bg-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
       <div className="absolute top-1/3 right-10 w-100 h-100 bg-violet-600/10 dark:bg-violet-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* Left Column: Personal Intro & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            
             {/* Status Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 backdrop-blur-md shadow-sm">
               <span className="relative flex h-2.5 w-2.5">
@@ -87,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Main Headline & Animated Subtitle */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
-                Hi, I'm{' '}
+                Hi, I'm{" "}
                 <span className="bg-linear-to-r from-indigo-400 via-violet-300 to-indigo-200 bg-clip-text text-transparent">
                   {PERSONAL_INFO.name}
                 </span>
@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({
               </a>
 
               <button
-                onClick={() => setViewMode('mobile-sim')}
+                onClick={() => setViewMode("mobile-sim")}
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-100 font-medium text-sm border border-slate-700/80 transition-all active:scale-95"
               >
                 <Smartphone className="w-4 h-4 text-violet-400" />
@@ -135,7 +135,9 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Social & Contact Direct Links */}
             <div className="flex items-center gap-4 pt-4 border-t border-slate-800/80">
-              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">Connect:</span>
+              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider">
+                Connect:
+              </span>
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
@@ -173,46 +175,56 @@ export const Hero: React.FC<HeroProps> = ({
             {/* Quick Metrics Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
               {PERSONAL_INFO.stats.map((stat, i) => (
-                <div key={i} className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
-                  <div className="text-2xl font-extrabold text-white font-mono">{stat.value}</div>
-                  <div className="text-xs text-slate-400 font-medium mt-0.5">{stat.label}</div>
+                <div
+                  key={i}
+                  className="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm"
+                >
+                  <div className="text-2xl font-extrabold text-white font-mono">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-slate-400 font-medium mt-0.5">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
-
           </div>
 
           {/* Right Column: Live Interactive Developer Sandbox Card */}
           <div className="lg:col-span-5">
             <div className="relative group">
-              
               {/* Card Glow Effect */}
               <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-indigo-500 via-violet-500 to-emerald-500 opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300"></div>
 
               <div className="relative bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden">
-                
                 {/* Window Header */}
                 <div className="flex items-center justify-between px-4 py-3 bg-slate-950 border-b border-slate-800">
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
                     <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
                     <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                    <span className="ml-2 font-mono text-xs text-slate-400 font-semibold">LiveReactWidget.tsx</span>
+                    <span className="ml-2 font-mono text-xs text-slate-400 font-semibold">
+                      LiveReactWidget.tsx
+                    </span>
                   </div>
 
                   <div className="flex items-center gap-1 bg-slate-800 p-1 rounded-lg text-xs font-mono">
                     <button
-                      onClick={() => setActiveTab('preview')}
+                      onClick={() => setActiveTab("preview")}
                       className={`px-2.5 py-1 rounded-md transition-colors ${
-                        activeTab === 'preview' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
+                        activeTab === "preview"
+                          ? "bg-indigo-600 text-white font-bold"
+                          : "text-slate-400 hover:text-white"
                       }`}
                     >
                       Preview
                     </button>
                     <button
-                      onClick={() => setActiveTab('code')}
+                      onClick={() => setActiveTab("code")}
                       className={`px-2.5 py-1 rounded-md transition-colors ${
-                        activeTab === 'code' ? 'bg-indigo-600 text-white font-bold' : 'text-slate-400 hover:text-white'
+                        activeTab === "code"
+                          ? "bg-indigo-600 text-white font-bold"
+                          : "text-slate-400 hover:text-white"
                       }`}
                     >
                       Source Code
@@ -222,9 +234,8 @@ export const Hero: React.FC<HeroProps> = ({
 
                 {/* Card Content Area */}
                 <div className="p-5 min-h-80 flex flex-col justify-between">
-                  {activeTab === 'preview' ? (
+                  {activeTab === "preview" ? (
                     <div className="space-y-4">
-                      
                       {/* Live Demo Widget Header */}
                       <div className="flex items-center justify-between p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
                         <div className="flex items-center gap-3">
@@ -232,13 +243,20 @@ export const Hero: React.FC<HeroProps> = ({
                             <Zap className="w-5 h-5" />
                           </div>
                           <div>
-                            <div className="text-sm font-semibold text-white">Interactive React Component</div>
-                            <div className="text-xs text-slate-400">State Count: {btnClicked}</div>
+                            <div className="text-sm font-semibold text-white">
+                              Interactive React Component
+                            </div>
+                            <div className="text-xs text-slate-400">
+                              State Count: {btnClicked}
+                            </div>
                           </div>
                         </div>
 
                         <button
-                          onClick={() => setBtnClicked((prev: number): number => prev + 1)}
+                          onClick={() => {
+                            onOpenResume();
+                            setBtnClicked((prev: number): number => prev + 1);
+                          }}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold shadow-sm active:scale-95 transition-all"
                         >
                           <Play className="w-3 h-3 fill-current" />
@@ -248,12 +266,20 @@ export const Hero: React.FC<HeroProps> = ({
 
                       {/* Animated Result Box */}
                       <div className="p-4 rounded-xl bg-slate-950 border border-slate-800/90 font-mono text-xs space-y-2">
-                        <div className="text-slate-400">// Component Output Log</div>
-                        <div className="text-emerald-400">✓ React 19 StrictMode: Rendered in 0.4ms</div>
-                        <div className="text-indigo-300">⚡ Tailwind CSS v4 JIT Compiled</div>
-                        <div className="text-violet-300">📱 Touch & Desktop Event Listeners Active</div>
+                        <div className="text-slate-400">
+                          // Component Output Log
+                        </div>
+                        <div className="text-emerald-400">
+                          ✓ React 19 StrictMode: Rendered in 0.4ms
+                        </div>
+                        <div className="text-indigo-300">
+                          ⚡ Tailwind CSS v4 JIT Compiled
+                        </div>
+                        <div className="text-violet-300">
+                          📱 Touch & Desktop Event Listeners Active
+                        </div>
                         <div className="text-amber-300">
-                          {btnClicked > 0 
+                          {btnClicked > 0
                             ? `🔥 Button pressed ${btnClicked} times! State updated cleanly.`
                             : '👉 Click "Interact" button above to trigger live state mutation.'}
                         </div>
@@ -261,7 +287,13 @@ export const Hero: React.FC<HeroProps> = ({
 
                       {/* Tech Stack Pills in Card */}
                       <div className="flex flex-wrap gap-1.5 pt-2">
-                        {['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'HTML5/CSS3'].map((tech) => (
+                        {[
+                          "React 19",
+                          "TypeScript",
+                          "Tailwind CSS",
+                          "Vite",
+                          "HTML5/CSS3",
+                        ].map((tech) => (
                           <span
                             key={tech}
                             className="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-[11px] font-mono border border-slate-700/60"
@@ -270,7 +302,6 @@ export const Hero: React.FC<HeroProps> = ({
                           </span>
                         ))}
                       </div>
-
                     </div>
                   ) : (
                     <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 overflow-x-auto max-h-75">
@@ -288,7 +319,7 @@ export function InteractiveWidget() {
       <p className="text-xs text-slate-400">
         Clicks: {clicks}
       </p>
-      <button 
+      <button onClick={onOpenResume} 
         onClick={() => setClicks(c => c + 1)}
         className="btn-primary"
       >
@@ -309,13 +340,10 @@ export function InteractiveWidget() {
                     </span>
                     <span>v2.4.0 • Production Ready</span>
                   </div>
-
                 </div>
-
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
